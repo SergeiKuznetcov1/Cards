@@ -7,6 +7,10 @@ using System;
 using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour
 {
+    public GameObject StartGameScreen;
+    public GameObject SelectPlayerScreen;
+    public GameObject AboutScreen;
+    public GameObject InstructionScreen;
     public List<string> PlayersNames = new();
     public GameObject GeneralCard;
     public GameObject ProfessionCard;
@@ -112,5 +116,26 @@ public class GameController : MonoBehaviour
         PlayersNames.Clear();
         NumberOfPlayers = 0;
         SceneManager.LoadScene(0);
+    }
+
+    public void GoToFirstScreen() {
+        AboutScreen.SetActive(false);
+        InstructionScreen.SetActive(false);
+        StartGameScreen.SetActive(true);
+    }
+
+    public void GoToAbout() {
+        StartGameScreen.SetActive(false);
+        AboutScreen.SetActive(true);
+    }
+
+    public void GoToInstruction() {
+        StartGameScreen.SetActive(false);
+        InstructionScreen.SetActive(true);
+    }
+
+    public void GoToSelectPlayerScreen() {
+        StartGameScreen.SetActive(false);
+        SelectPlayerScreen.SetActive(true);
     }
 }
