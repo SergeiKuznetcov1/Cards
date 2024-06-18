@@ -31,9 +31,13 @@ public class StartGameBtn : MonoBehaviour
             if (_playerNumber == 0) {
                 _playerNumber = 1;
             }
+            
         }
         if (GameController.PlayersNames.Count == 0 && GameController.NumberOfPlayers == 0) {
             GameController.NumberOfPlayers = _playerNumber;
+            for (int i = 0; i < GameController.NumberOfPlayers; i++) {
+                GameController.AllPlayersCardsPicked.Add(new List<Sprite>());
+            }
             InputField.text = "";
             StartScreenTopText.text = "Введите имя игрока " + _currentPlayer;
         }

@@ -27,6 +27,7 @@ public class GameController : MonoBehaviour
     public static Action OnEndTurn;
     public GameObject GameScreenHolder;
     public GameObject EndScreenHolder;
+    public List<List<Sprite>> AllPlayersCardsPicked = new();
     private void OnEnable() {
         Card.OnCardClick += SwitchCardInfoState;
     }
@@ -137,5 +138,9 @@ public class GameController : MonoBehaviour
     public void GoToSelectPlayerScreen() {
         StartGameScreen.SetActive(false);
         SelectPlayerScreen.SetActive(true);
+    }
+
+    public void ExitApplication() {
+        Application.Quit();
     }
 }

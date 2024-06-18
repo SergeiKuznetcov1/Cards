@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class PlayerInfoManager : MonoBehaviour
 {
+    public GameObject PlayerNameObj;
     public TMP_Text PlayerNumberText;
     public TMP_Text[] ColorInfo;
     public Image[] ColorImages;

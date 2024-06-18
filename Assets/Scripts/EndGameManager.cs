@@ -15,6 +15,7 @@ public class EndGameManager : MonoBehaviour
         for (int i = 0; i < GameController.NumberOfPlayers; i++) {
             GameObject playerData = Instantiate(PlayerDataPrefab, this.transform);
             PlayerInfoManager playerInfoManager = playerData.GetComponent<PlayerInfoManager>();
+            playerInfoManager.PlayerNameObj.GetComponent<PlayerCardsTrigger>().PlayerIndex = i;
             playerInfoManager.PlayerNumberText.text = GameController.PlayersNames[i];
             for (int j = 0; j < 5; j++) {
                 CardColor cardColor = CardColor.Green;
