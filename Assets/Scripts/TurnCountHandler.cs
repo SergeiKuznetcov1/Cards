@@ -7,7 +7,7 @@ using System;
 public class TurnCountHandler : MonoBehaviour
 {
     public TMP_Text TurnCountNumber;
-    private int _currentTurnCount = 0;
+    private int _currentTurnCount = 1;
     private void OnEnable() {
         GameController.OnEndTurn += IncreaseTurnCount;
     }
