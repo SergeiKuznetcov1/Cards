@@ -17,6 +17,7 @@ public class StartGameBtn : MonoBehaviour
     public static Action OnGameStart;
     private int _currentPlayer = 1;
     private int _playerNumber;
+    public TNVirtualKeyboard VirtualKeyboard;
     public void StartGame() {
         if (GameController.NumberOfPlayers == 0) {
             string stringDigits = "";
@@ -39,6 +40,7 @@ public class StartGameBtn : MonoBehaviour
                 GameController.AllPlayersCardsPicked.Add(new List<Sprite>());
             }
             InputField.text = "";
+            Debug.Log(InputField.text);
             StartScreenTopText.text = "Введите имя игрока " + _currentPlayer;
         }
         else if (_currentPlayer + 1 < GameController.NumberOfPlayers) {
@@ -58,6 +60,7 @@ public class StartGameBtn : MonoBehaviour
             GameController.PlayersNames.Add(NumberOfPlayersText.text);
             StartScreenHolder.SetActive(false);
             GameScreenHolder.SetActive(true);
+            VirtualKeyboard.HideVirtualKeyboard();
             OnGameStart?.Invoke();
         }
     }

@@ -1,2 +1,2 @@
-Build path: D:/UnityProjects/Unity2D/Cards/WebGL for itch
-Build number: 29
+Build path: D:/UnityProjects/Unity2D/Cards/WebGL
+Build number: 30
